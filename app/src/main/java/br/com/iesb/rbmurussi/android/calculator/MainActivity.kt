@@ -64,17 +64,21 @@ class MainActivity : AppCompatActivity() {
         btnCot.setOnClickListener(click)
 
         btnEqual.setOnClickListener {
-            var result = ExpressionBuilder(lastLineText())
-                    .operator(factorial)
-                    .function(cosecant)
-                    .function(secant)
-                    .build()
-                    .evaluate()
-            txtScreen.text = "${txtScreen.text}=$result\n"
+            try {
+                var result = ExpressionBuilder(lastLineText())
+                        .operator(factorial)
+                        .function(cosecant)
+                        .function(secant)
+                        .build()
+                        .evaluate()
+                txtScreen.append("=\n$result")
+            } catch (ex: Exception) {
+                txtScreen.text = "Error: ${ex.message}"
+            }
         }
 
         btnClear.setOnClickListener {
-            txtScreen.text = "\n"
+            txtScreen.text = ""
         }
     }
 

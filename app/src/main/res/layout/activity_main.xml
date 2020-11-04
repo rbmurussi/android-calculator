@@ -8,85 +8,94 @@
 
     <TextView
         android:id="@+id/txtScreen"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="100dp"
+        android:layout_weight="1.0"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:gravity="right|center_vertical"
-        android:maxLength="16"
+        android:gravity="bottom|right"
+        android:maxLines="10"
         android:padding="10dp"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="30sp"
         android:typeface="serif"
-        android:text="1 + 2"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_below="@+id/txtScreen"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtScreen"
-        android:layout_height="0dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/btnSin"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="sin"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnSqrt"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="sqrt"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btnMod"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="mod"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btnFact"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="fact"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btnLog"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:text="log"
-            android:textSize="20sp" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/txtScreen">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <!--sine-->
+            <Button
+                android:id="@+id/btnSin"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="sin"
+                android:textSize="20sp" />
+
+            <!--square root-->
+            <Button
+                android:id="@+id/btnSqrt"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="sqrt"
+                android:textSize="15sp" />
+
+            <!--logarithmus naturalis (base e)-->
+            <Button
+                android:id="@+id/btnLog"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="log"
+                android:textSize="20sp" />
+
+            <!--Create a custom operator for calculating the factorial-->
+            <Button
+                android:id="@+id/btnFact"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="!"
+                android:textSize="30sp" />
+
+            <!--Modulo-->
+            <Button
+                android:id="@+id/btnMod"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/button"
+                android:text="%"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <!--cosine-->
             <Button
                 android:id="@+id/btnCos"
                 android:layout_width="1dp"
@@ -95,6 +104,7 @@
                 android:background="@drawable/button"
                 android:text="cos"
                 android:textSize="20sp" />
+
 
             <Button
                 android:id="@+id/btnClear"
@@ -106,7 +116,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/btnBracketRigth"
+                android:id="@+id/btnLeftParenthesis"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -115,7 +125,7 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/btnBracketLeft"
+                android:id="@+id/btnRightParentheses"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -139,13 +149,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <!--tangent-->
             <Button
                 android:id="@+id/btnTag"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="tag"
+                android:text="tan"
                 android:textSize="20sp" />
 
             <Button
@@ -192,14 +203,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <!--Create a custom function for calculating the cosecant-->
             <Button
                 android:id="@+id/btnCossec"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="cossec"
-                android:textSize="10sp" />
+                android:text="csc"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btnFour"
@@ -227,7 +239,7 @@
                 android:background="@drawable/button"
                 android:text="6"
                 android:textSize="30sp" />
-
+            <!--Subtraction-->
             <Button
                 android:id="@+id/btnSubtract"
                 android:layout_width="1dp"
@@ -244,13 +256,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <!--Create a custom function for calculating the secant-->
             <Button
                 android:id="@+id/btnSec"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="Sec"
+                android:text="sec"
                 android:textSize="20sp" />
 
             <Button
@@ -268,7 +281,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="@string/_2"
+                android:text="2"
                 android:textSize="30sp" />
 
             <Button
@@ -280,6 +293,7 @@
                 android:text="3"
                 android:textSize="30sp" />
 
+            <!--Addition-->
             <Button
                 android:id="@+id/btnAdd"
                 android:layout_width="1dp"
@@ -296,17 +310,19 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <!--cotangent-->
             <Button
-                android:id="@+id/btnCotg"
+                android:id="@+id/btnCot"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/button"
-                android:text="cotg"
-                android:textSize="15sp" />
+                android:text="cot"
+                android:textSize="20sp" />
 
+            <!--euler's number raised to the power (e^x)-->
             <Button
-                android:id="@+id/btnPow"
+                android:id="@+id/btnExp"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
